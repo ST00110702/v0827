@@ -23,7 +23,10 @@ namespace v0827
 
             label1.Left = rand.Next(ClientSize.Width - label1.Size.Width);
             label1.Top = rand.Next(ClientSize.Height - label1.Size.Height);
-
+            label4.Left = rand.Next(ClientSize.Width - label1.Size.Width);
+            label4.Top = rand.Next(ClientSize.Height - label1.Size.Height);
+            label5.Left = rand.Next(ClientSize.Width - label1.Size.Width);
+            label5.Top = rand.Next(ClientSize.Height - label1.Size.Height);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -33,6 +36,10 @@ namespace v0827
 
             label1.Left += vx;
             label1.Top += vy;
+            label4.Left += vx;
+            label4.Top += vy;
+            label5.Left += vx;
+            label5.Top += vy;
 
             if (label1.Left < 0)
             {
@@ -50,6 +57,43 @@ namespace v0827
             {
                 vy = -Math.Abs(vy);
             }
+
+
+            if (label4.Left < 0)
+            {
+                vx = Math.Abs(vx);
+            }
+            if (label4.Top < 0)
+            {
+                vy = Math.Abs(vy);
+            }
+            if (label4.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
+            if (label4.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
+
+
+            if (label5.Left < 0)
+            {
+                vx = Math.Abs(vx);
+            }
+            if (label5.Top < 0)
+            {
+                vy = Math.Abs(vy);
+            }
+            if (label5.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
+            if (label5.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
+
 
             // 2次元クラスPoint型の変数mpを宣言
             Point mp = MousePosition;
@@ -71,6 +115,8 @@ namespace v0827
             {
                    timer1.Enabled=false;
             }
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
