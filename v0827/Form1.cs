@@ -15,8 +15,6 @@ namespace v0827
         int vx = -10;
         int vy = -10;
 
-
-
         public Form1()
         {
 
