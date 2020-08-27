@@ -16,5 +16,29 @@ namespace v0827
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+          
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int vx = -10;
+            int vy = -10;
+
+
+            label1.Left += vx;
+            label1.Top += vy;
+
+            if (label1.Left<0)
+            {
+                vx = -10;
+            }
+            if (label1.Top < 0)
+                vy = -10;
+
+        }
     }
 }
